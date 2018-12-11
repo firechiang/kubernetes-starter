@@ -156,7 +156,15 @@ docker-compose -version                              --检查docker-compose环�
 		  
 3，docker-compose up -d                              -- 后台运行 docker-compose
 ```
-### 7，附录
+### 7，部署 Harbor（私有镜像仓库），下载 https://storage.googleapis.com/harbor-releases/release-1.6.0/harbor-offline-installer-v1.6.2.tgz
+```bash
+tar -zxvf harbor-offline-installer-v1.6.2.tgz         --解压文件
+cd harbor
+vi harbor.cfg                                         --编辑修改 hostname = 192.168.83.131（机器IP或域名），其它根据实际情况修改
+./install.sh                                          --安装（一般执行完这一步，所有相关 Harbor 的镜像都会跑起来，直接就可以使用，默认起来一个nginx-photon 80端口的代理容器，可使用 docker ps查看）
+docker-compose stop/start                             --如果上一步 Harbor 相关镜像没跑来，就执行
+```
+### 8，附录
 ```bash
 netstat -nlpt                                         --查看所有端口映射情况
 netstat -nlpt |grep 3306                              --查看3306端口使用情况
@@ -164,13 +172,13 @@ service mysqld stop                                   --停止名叫 mysqld 的�
 mysql -uroot -p                                       --centos7 使用mysql
 env                                                   --centos7 查看环境变量
 ```
-### 8，删除Docker
+### 9，删除Docker
 ```bash
 yum list installed | grep docker                      --列出 docker 安装的软件包
 yum -y remove '安装的软件包名'                         --卸载 docker 
 rm -rf /var/lib/docker                                --删除 docker 镜像、容器，卷组和用户自配置文件。
 ```
-### 9，说明
+### 10，说明
 ```bash
 docker 默认支持互通，可通过 -icc=false 关闭互通。《/usr/bin/docker daemon --icc=false》
 私有库搭建可使用：https://github.com/goharbor/harbor/releases	
