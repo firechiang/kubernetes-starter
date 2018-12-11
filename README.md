@@ -5,11 +5,11 @@ yum -y update                                         --更新 yum 源到最新
 
 cat >/etc/yum.repos.d/docker.repo <<-EOF              --添加 yum 源 如下
     [dockerrepo]
-	name=Docker Repository
-	baseurl=https://yum.dockerproject.org/repo/main/centos/7
-	enabled=1
-	gpgcheck=1
-	gpgkey=https://yum.dockerproject.org/gpg
+    name=Docker Repository
+    baseurl=https://yum.dockerproject.org/repo/main/centos/7
+    enabled=1
+    gpgcheck=1
+    gpgkey=https://yum.dockerproject.org/gpg
 EOF
 
 yum install -y docker-selinux                         --安装 docker-selinux
@@ -83,12 +83,12 @@ git push test/zookeeper:3.5                           --将zookeeper 镜像上�
 touch Dockerfile                                      --创建Dockerfile文件
 vi Dockerfile                                         --编辑文件
     FORM centos                                       --'FORM' 在某个基础镜像之上进行扩展<centos:latest；:latest是版本>
-	MAINTAINER chiangfire@outlook.com                 --'MAINTAINER' 镜像创建者
-	ADD nginx-1.12.2.tar.gz /usr/local/src            --'ADD' 添加 nginx-1.12.2.tar.gz 文件到 /usr/local/src
-	EXPOSE 6379                                       --'EXPOSE' 镜像开放6379端口
-	ENTRYPOINT java -version                          --'ENTRYPOINT' 镜像启动时要执行的命令，必须是前台执行的方式，一般都是自己的应用系统启动命令
-	ENV JAVA_HOME /usr/lib/java-8                     --'ENV' 添加环境变量
-	RUN '创建镜像要执行的命令《比如安装软件》'        --多条命令可使用 \ 换行，下一行使用 && 开头，整个Dockerfile最好只有一个RUN因为每个RUN都是一层镜像
+    MAINTAINER chiangfire@outlook.com                 --'MAINTAINER' 镜像创建者
+    ADD nginx-1.12.2.tar.gz /usr/local/src            --'ADD' 添加 nginx-1.12.2.tar.gz 文件到 /usr/local/src
+    EXPOSE 6379                                       --'EXPOSE' 镜像开放6379端口
+    ENTRYPOINT java -version                          --'ENTRYPOINT' 镜像启动时要执行的命令，必须是前台执行的方式，一般都是自己的应用系统启动命令
+    ENV JAVA_HOME /usr/lib/java-8                     --'ENV' 添加环境变量
+    RUN '创建镜像要执行的命令《比如安装软件》'        --多条命令可使用 \ 换行，下一行使用 && 开头，整个Dockerfile最好只有一个RUN因为每个RUN都是一层镜像
 docker build -t '镜像名称' 'Dockerfile所在目录'         --创建镜像，镜像完成后所在目录可使用 . 代表当前目录
 
 Supervisor docker                                     --可存储密码，以及同时使用多个进程以及开启后台进程 <具体可 百度>
