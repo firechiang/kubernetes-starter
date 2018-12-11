@@ -120,7 +120,14 @@ docker inspect '容器ID'                                                       
 ```
 ### 6，Docker-Compose<半个容器编排，还是用 k8s 吧> 可以在容器中直接使用 service 名称 代替 IP，相互访问容器里面的 service；使用如下
 ```bash
-1，定义 docker-compose.yml 内容如下：
+1，安装Docker-Compose之前，先安装 python-pip（百度看看是不是还有别的安装方式）
+yum -y install epel-release                          --没有python-pip包就执行命令
+yum -y install python-pip                            --执行成功之后，再次执行
+pip install --upgrade pip                            --对安装好的pip进行升级
+pip -V                                               --pip安装好了，执行pip -V 再次检查pip环境
+pip install docker-compose                           --安装Docker-Compose
+docker-compose -version                              --检查docker-compose环境
+2，定义 docker-compose.yml 内容如下：
     version: '3'                                     -- docker compose 版本
     services:                                        -- service 定义
       message-service:                               -- service 名称
@@ -142,7 +149,7 @@ docker inspect '容器ID'                                                       
 	- "--redis.address=127.0.0.1"                -- 参数 就是 user-service 容器在启动时所添加的命令行参数，在spring配置文件里面可使用${redis.address}	取到
 		  
 		  
-2，docker-compose up -d                              -- 后台运行 docker-compose
+3，docker-compose up -d                              -- 后台运行 docker-compose
 ```
 ### 7，附录
 ```bash
