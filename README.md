@@ -174,7 +174,7 @@ vi harbor.cfg                                         --编辑修改 hostname = 
 docker-compose stop/start                             --如果上一步 Harbor 相关镜像没跑来，就执行
 注：默认用户密码是：admin/Harbor12345，也可在 harbor.cfg 配置文件修改
 
-vi /usr/lib/systemd/system/docker.service             --修改docker启动文件，设置信任的主机与端口，修改内容如下：
+vi /usr/lib/systemd/system/docker.service             --修改docker启动文件，设置信任的主机与端口（私有镜像仓库地址），修改内容如下：
     ExecStart=/usr/bin/dockerd --insecure-registry=172.16.103.99:80
     
 systemctl daemon-reload                               --重新 load 配置文件
