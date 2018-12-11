@@ -156,7 +156,7 @@ docker-compose -version                              --检查docker-compose环�
 		  
 3，docker-compose up -d                              -- 后台运行 docker-compose
 ```
-### 7，部署 Harbor（私有镜像仓库），下载 https://storage.googleapis.com/harbor-releases/release-1.6.0/harbor-offline-installer-v1.6.2.tgz
+### 7，部署 Harbor（私有镜像仓库）下载 https://storage.googleapis.com/harbor-releases/release-1.6.0/harbor-offline-installer-v1.6.2.tgz
 部署参考：https://www.cnblogs.com/biglittleant/p/7283738.html
 ```bash
 tar -zxvf harbor-offline-installer-v1.6.2.tgz         --解压文件
@@ -176,6 +176,7 @@ docker-compose stop/start                             --如果上一步 Harbor �
 
 vi /usr/lib/systemd/system/docker.service             --修改docker启动文件，设置信任的主机与端口，修改内容如下：
     ExecStart=/usr/bin/dockerd --insecure-registry=172.16.103.99:80
+    
 systemctl daemon-reload                               --重新 load 配置文件
 systemctl restart docker.service                      --重启 docker 服务
 docker login 172.16.103.99:80                         --登陆 docker
