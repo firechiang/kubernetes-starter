@@ -127,6 +127,7 @@ pip install --upgrade pip                            --对安装好的pip进行�
 pip -V                                               --pip安装好了，执行pip -V 再次检查pip环境
 pip install docker-compose                           --安装Docker-Compose
 docker-compose -version                              --检查docker-compose环境
+
 2，定义 docker-compose.yml 内容如下：
     version: '3'                                     -- docker compose 版本
     services:                                        -- service 定义
