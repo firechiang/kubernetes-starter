@@ -89,7 +89,7 @@ vi Dockerfile                                         --编辑文件
 	ENTRYPOINT java -version                          --'ENTRYPOINT' 镜像启动时要执行的命令，必须是前台执行的方式，一般都是自己的应用系统启动命令
 	ENV JAVA_HOME /usr/lib/java-8                     --'ENV' 添加环境变量
 	RUN '创建镜像要执行的命令《比如安装软件》'        --多条命令可使用 \ 换行，下一行使用 && 开头，整个Dockerfile最好只有一个RUN因为每个RUN都是一层镜像
-docker build -t '镜像名称' '镜像完成后所在目录'       --创建镜像，镜像完成后所在目录可使用 . 代表当前目录
+docker build -t '镜像名称' 'Dockerfile所在目录'         --创建镜像，镜像完成后所在目录可使用 . 代表当前目录
 
 Supervisor docker                                     --可存储密码，以及同时使用多个进程以及开启后台进程 <具体可 百度>
 ```
