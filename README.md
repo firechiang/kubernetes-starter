@@ -191,8 +191,8 @@ docker 默认支持互通，可通过 -icc=false 关闭互通。《/usr/bin/dock
 
 
 
-  [1-1]: https://github.com/chiangfire/kubernetes-starter/blob/master/docs/1-pre-centos.md
-  [1-2]: https://github.com/chiangfire/kubernetes-starter/blob/master/docs/1-pre-ubuntu.md
-  [2]: https://github.com/chiangfire/kubernetes-starter/blob/master/docs/2-kubernetes-simple.md
-  [3]: https://github.com/chiangfire/kubernetes-starter/blob/master/docs/3-kubernetes-with-ca.md
-  [4]: https://github.com/chiangfire/kubernetes-starter/blob/master/docs/4-microservice-deploy.md
+  [1-1]: https://github.com/firechiang/kubernetes-starter/blob/master/docs/1-pre-centos.md
+  [1-2]: https://github.com/firechiang/kubernetes-starter/blob/master/docs/1-pre-ubuntu.md
+  [2]: https://github.com/firechiang/kubernetes-starter/blob/master/docs/2-kubernetes-simple.md
+  [3]: https://github.com/firechiang/kubernetes-starter/blob/master/docs/3-kubernetes-with-ca.md
+  [4]: https://github.com/firechiang/kubernetes-starter/blob/master/docs/4-microservice-deploy.md
