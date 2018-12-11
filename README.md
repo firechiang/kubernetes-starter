@@ -122,7 +122,7 @@ docker inspect '容器ID'                                                       
 ```bash
 1，定义 docker-compose.yml 内容如下：
     version: '3'                                     -- docker compose 版本
-    service:                                         -- service 定义
+    services:                                        -- service 定义
       message-service:                               -- service 名称
         image: message-service:latest                -- service 镜像名称
 	ports: 
