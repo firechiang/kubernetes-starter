@@ -130,7 +130,7 @@ docker inspect '容器ID'                                                       
       
       user-service:                                  -- service 名称
         image: user-service:latest                   -- service 镜像
-        command                                      -- 命令行参数
+        command:                                     -- 命令行参数
         - "--mysql.address=192.168.0.1"		     -- 参数 就是 user-service 容器在启动时所添加的命令行参数，在spring配置文件里面可使用${mysql.address}	取到
 		
       user-edge-service:                             -- service 名称             
