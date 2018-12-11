@@ -155,7 +155,7 @@ env                                                   --centos7 查看环境变�
 ### 8，删除Docker
 ```bash
 yum list installed | grep docker                      --列出 docker 安装的软件包
-yum -y remove '安装的软件包名'                        --卸载 docker 
+yum -y remove '安装的软件包名'                         --卸载 docker 
 rm -rf /var/lib/docker                                --删除 docker 镜像、容器，卷组和用户自配置文件。
 ```
 ### 9，说明
