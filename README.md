@@ -40,6 +40,10 @@ docker run java env                                  --查看名叫 java 的 doc
 
 docker run 后面追加-d=true或者-d                      --容器将会运行在后台模式。
 
+docker run 后面追加-p 5000:5000                       --将主机的5000转发到容器的5000端口《可使用--net=host替代直接使用宿主机端口不做转发》
+
+docker run 后面追加 -e MYSQL_ROOT_PASSWORD=jiang      --往容器环境变量里面设值《一般服务的配置也是通过这个传递的》
+
 docker run 后面追加 -rm                               --容器运行完成后立即删除
 
 docker exec                                           --进入到到该容器中，或者attach重新连接容器的会话 <不建议使用 attach，一个是会话的原因，一个是断开后会停止 docker 镜像>
