@@ -76,7 +76,7 @@ docker commit 'id' 镜像名称                           --将容器创建为�
 
 tail -f /var/log/messages |grep docker                --查看 docker 日志，这个日志目录应该是不对的
 
-docker login                                          --docker 登陆，然后提示 输入用户名，密码
+docker login                                          --docker 登陆，然后提示 输入用户名，密码（默认登陆 hub.docker）
 
 docker tag zookeeper:3.5 test/zookeeper:3.5           --为镜像 zookeeper 打上tag <:3.5是镜像版本>
 
