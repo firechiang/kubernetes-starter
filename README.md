@@ -122,27 +122,27 @@ docker inspect '容器ID'                                                       
 ```bash
 1，定义 docker-compose.yml 内容如下：
     version: '3'                                     -- docker compose 版本
-	service:                                         -- service 定义
-	  message-service:                               -- service 名称
-	    image: message-service:latest                -- service 镜像名称
-		ports: 
-		- 8080:8080                                  -- service 对外提供的端口
+    service:                                         -- service 定义
+      message-service:                               -- service 名称
+        image: message-service:latest                -- service 镜像名称
+	ports: 
+	- 8080:8080                                  -- service 对外提供的端口
       
-      user-service:                            -- service 名称
-        image: user-service:latest             -- service 镜像
-        command                                -- 命令行参数
-        - "--mysql.address=192.168.0.1"		    -- 参数 就是 user-service 容器在启动时所添加的命令行参数，在spring配置文件里面可使用${mysql.address}	取到
+      user-service:                                  -- service 名称
+        image: user-service:latest                   -- service 镜像
+        command                                      -- 命令行参数
+        - "--mysql.address=192.168.0.1"		     -- 参数 就是 user-service 容器在启动时所添加的命令行参数，在spring配置文件里面可使用${mysql.address}	取到
 		
-	  user-edge-service:                       -- service 名称             
-	      image: user-edge-service: latest     -- 镜像名称
-		  links:                                -- 依赖 service
-		  - user-servive                        -- 依赖 service 名称
-		  - message-service                     -- 依赖 service 名称
-		  command:                              -- 命令行参数
-		  - "--redis.address=127.0.0.1"         -- 参数 就是 user-service 容器在启动时所添加的命令行参数，在spring配置文件里面可使用${redis.address}	取到
+      user-edge-service:                             -- service 名称             
+        image: user-edge-service: latest             -- 镜像名称
+	links:                                       -- 依赖 service
+        - user-servive                               -- 依赖 service 名称
+        - message-service                            -- 依赖 service 名称
+        command:                                     -- 命令行参数
+	- "--redis.address=127.0.0.1"                -- 参数 就是 user-service 容器在启动时所添加的命令行参数，在spring配置文件里面可使用${redis.address}	取到
 		  
 		  
-2，docker-compose up -d                        -- 后台运行 docker-compose
+2，docker-compose up -d                              -- 后台运行 docker-compose
 ```
 ### 7，附录
 ```bash
