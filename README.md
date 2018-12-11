@@ -126,7 +126,7 @@ docker inspect '容器ID'                                                       
       message-service:                               -- service 名称
         image: message-service:latest                -- service 镜像名称
 	ports: 
-	- 8080:8080                                  -- service 对外提供的端口
+	- 8080:8080                                  -- service 对外提供的端口（容器端口:对外提供端口）
       
       user-service:                                  -- service 名称
         image: user-service:latest                   -- service 镜像
