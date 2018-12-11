@@ -110,9 +110,9 @@ docker inspect '容器ID'                                                       
 ```bash
 修改128镜像：
     vi /usr/lib/systemd/system/docker.service
-	ExecStart=/usr/bin/docker daemon --bip=172.18.42.1/16 -H fd:// -H=unix:///var/run/docker.sock
-	systemctl daemon-reload
-	重启128 docker 镜像
+    ExecStart=/usr/bin/docker daemon --bip=172.18.42.1/16 -H fd:// -H=unix:///var/run/docker.sock
+    systemctl daemon-reload
+    重启128 docker 镜像
 	
 128镜像上执行 route add -net 172.17.0.0/16 gw 192.168.18.130
 130镜像上执行 route add -net 172.18.0.0/16 gw 192.168.18.128
