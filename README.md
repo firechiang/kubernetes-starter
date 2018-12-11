@@ -48,15 +48,15 @@ docker create/start/stop/pause/unpause                --容器生命周期相关
 
     docker create -it --name=myjava java java -version    --创建一个 docker 容器名叫 myjava，后面的命令就是容器所要做的事情
 	
-	docker start myjava                                   --启动刚刚创建的容器<测试>
+    docker start myjava                                   --启动刚刚创建的容器<测试>
 	
-	docker create --name=mysql -e MYSQL_ROOT_PASSWORD=jiang -p 3306:3306 mysql   --建一个 mysql 的 docker 容器，-e是往容器环境变量里面设值<一般服务的配置也是通过这个传递的>，-p 3306:3306 是将主机的3306转发到容器的3306端口《可使用--net=host替代直接使用宿主机端口不做转发》，最后的mysql是镜像的名称
+    docker create --name=mysql -e MYSQL_ROOT_PASSWORD=jiang -p 3306:3306 mysql   --建一个 mysql 的 docker 容器，-e是往容器环境变量里面设值<一般服务的配置也是通过这个传递的>，-p 3306:3306 是将主机的3306转发到容器的3306端口《可使用--net=host替代直接使用宿主机端口不做转发》，最后的mysql是镜像的名称
 	
-	docker start '容器名称 || 容器ID'                     --启动刚刚创建的 mysql docker容器
+    docker start '容器名称 || 容器ID'                     --启动刚刚创建的 mysql docker容器
 	
-	docker exec -it '容器名称 || 容器ID' bash             --进入容器 <如果报没有 bash 的错误直接使用：docker exec -it '容器名称' sh>进入容器
+    docker exec -it '容器名称 || 容器ID' bash             --进入容器 <如果报没有 bash 的错误直接使用：docker exec -it '容器名称' sh>进入容器
 	
-	docker stop '容器名称'                            --停止 mysql docker容器
+    docker stop '容器名称'                            --停止 mysql docker容器
 
 docker ps -a                                          --查看 docker 所有的容器
 
