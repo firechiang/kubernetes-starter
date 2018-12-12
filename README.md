@@ -66,6 +66,8 @@ docker ps -a                                          --查看 docker 所有的�
 
 docker rm 'id'                                        --删除容器  'id' 就是 docker ps -a 查看到的id
 
+docker rmi harbor/openjdk:8-jre                       --删除 imgae （harbor/openjdk:8-jre是 image 的名称及版本）
+
 docker ps                                             --查看 dicker 当前正在运行的容器
 
 docker logs -f '容器ID'                               --查看 服务容器运行日志 <就是用docker ps命令显示出来的那个容器ID>
