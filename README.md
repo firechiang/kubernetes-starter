@@ -161,7 +161,7 @@ docker-compose -version                              --检查docker-compose环�
 ### 7，部署 Harbor（私有镜像仓库）下载 https://storage.googleapis.com/harbor-releases/release-1.6.0/harbor-offline-installer-v1.6.2.tgz
 部署参考：https://www.cnblogs.com/biglittleant/p/7283738.html
 ```bash
-tar -zxvf harbor-offline-installer-v1.6.2.tgz         --解压文件
+tar -zxvf harbor-offline-installer-v1.6.2.tgz         --解压文件（需依赖 docker-compose 上面有安装方法）
 cd harbor
 vi harbor.cfg                                         --编辑修改 hostname = 192.168.83.131:9091（机器IP或域名），其它根据实际情况修改
     hostname                                          --配置主机名称，不可以设置127.0.0.1，localhost这样的主机名，
