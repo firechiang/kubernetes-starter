@@ -163,7 +163,7 @@ docker-compose -version                              --检查docker-compose环�
 ```bash
 tar -zxvf harbor-offline-installer-v1.6.2.tgz         --解压文件（需依赖 docker-compose 上面有安装方法）
 cd harbor
-vi harbor.cfg                                         --编辑修改 hostname = 192.168.83.131（机器IP或域名），其它根据实际情况修改
+vi harbor.cfg                                         --编辑修改 hostname = 192.168.83.131:8099（机器IP或域名），其它根据实际情况修改
     hostname                                          --配置主机名称，不可以设置127.0.0.1，localhost这样的主机名，
     ui_url_protocol                                   --指定使用HTTP协议还是HTTPS协议。
     Email settings                                    --设置harbor的邮箱。
@@ -172,16 +172,17 @@ vi harbor.cfg                                         --编辑修改 hostname = 
     db_password                                       --使用db需要指定连接数据库的密码
     self_registration                                 --是否允许自行注册用户，默认是on,新版本可以在图形界面中修改。
     max_job_workers                                   --最大工作数，默认是三个
-./install.sh                                          --安装（一般执行完这一步，所有相关 Harbor 的镜像都会跑起来，直接就可以使用，默认起来一个nginx-photon 80端口的代理容器，可使用 docker ps查看）
+vi docker-compose.yml                                 --修改nginx代理端口为 8099:8099    
+./install.sh                                          --安装（一般执行完这一步，所有相关 Harbor 的镜像都会跑起来，直接就可以使用，没有改的话默认起来一个nginx-photon 80端口的代理容器，可使用 docker ps查看）
 docker-compose stop/start                             --如果上一步 Harbor 相关镜像没跑来，就执行
 注：默认用户密码是：admin/Harbor12345，也可在 harbor.cfg 配置文件修改
 
 vi /usr/lib/systemd/system/docker.service             --修改docker启动文件，设置信任的主机与端口（私有镜像仓库地址），修改内容如下：
-    ExecStart=/usr/bin/dockerd --insecure-registry=172.16.103.99:80
+    ExecStart=/usr/bin/dockerd --insecure-registry=172.16.103.99:8099
     
 systemctl daemon-reload                               --重新 load 配置文件
 systemctl restart docker.service                      --重启 docker 服务
-docker login 172.16.103.99:80                         --登陆 docker
+docker login 172.16.103.99:8099                       --登陆 docker
     Username: admin
     Password: Harbor12345
     
