@@ -183,6 +183,11 @@ docker login 172.16.103.99:80                         --登陆 docker
     Username: admin
     Password: Harbor12345
     
+#打tag        镜像            私有仓库       私有仓库项目  完成后镜像名及版本
+               |                 |               |            |
+docker tag openjdk:8-jre 192.168.83.131:80/test-service/openjdk:9-jre   
+#推送镜像
+docker push 192.168.83.131:80/test-service/openjdk:9-jre
 ```
 ### 8，附录
 ```bash
