@@ -88,7 +88,7 @@ git push test/zookeeper:3.5                           --将zookeeper 镜像上�
 ```bash
 touch Dockerfile                                      --创建Dockerfile文件
 vi Dockerfile                                         --编辑文件
-    FORM centos                                       --'FORM' 在某个基础镜像之上进行扩展<centos:latest；:latest是版本>（可以指定私有仓库：192.168.83.131:80/test-service/centos:latest）
+    FORM centos                                       --'FORM' 在某个基础镜像之上进行扩展。（可以指定私有仓库：192.168.83.131:80/test-service/centos:latest）《:latest是版本》
     MAINTAINER chiangfire@outlook.com                 --'MAINTAINER' 镜像创建者
     ADD nginx-1.12.2.tar.gz /usr/local/src            --'ADD' 添加 nginx-1.12.2.tar.gz 文件到 /usr/local/src
     EXPOSE 6379                                       --'EXPOSE' 镜像开放6379端口
