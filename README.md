@@ -161,7 +161,7 @@ docker-compose -version                              --检查docker-compose环�
 ```bash
 tar -zxvf harbor-offline-installer-v1.6.2.tgz         --解压文件
 cd harbor
-vi harbor.cfg                                         --编辑修改 hostname = 192.168.83.131（机器IP或域名），其它根据实际情况修改
+vi harbor.cfg                                         --编辑修改 hostname = 192.168.83.131:9091（机器IP或域名），其它根据实际情况修改
     hostname                                          --配置主机名称，不可以设置127.0.0.1，localhost这样的主机名，
     ui_url_protocol                                   --指定使用HTTP协议还是HTTPS协议。
     Email settings                                    --设置harbor的邮箱。
