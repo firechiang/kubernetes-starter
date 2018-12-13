@@ -314,18 +314,18 @@ kubectl rollout undo deployment '部署名称'   -- 回滚上一步对某个部�
 使用配置文件的方式创建 pod，需要创建配置文件，具体如下：
     nginx-pod.yaml -- 文件名，内容如下
     apiVersion: v1
-    kind: Pod                   #类型
-    metadata:                   #源数据
+    kind: Pod                     #类型
+    metadata:                     #源数据
       name: nginx
-    spec:                       #说明
-      containers:               #容器
-        - name: nginx           #容器名称
-          image: nginx:1.7.9    #镜像
-          ports:
-            - containerPort: 80  #容器端口
+    spec:                         #说明
+      containers:                 #容器
+      - name: nginx               #容器名称
+        image: nginx:1.7.9        #镜像
+        ports:
+        - containerPort: 80       #容器端口
 
-kubectl create -f 'yaml文件名称'    -- 使用配置文件创建 pod
-kubectl get pods                   -- 查看刚刚创建的pod是否成功
+kubectl create -f 'yaml文件名称'   #使用配置文件创建 pod
+kubectl get pods                  #查看刚刚创建的pod是否成功
 
 
 使用配置文件的方式创建 '部署'，需要创建配置文件，具体如下：
@@ -342,14 +342,14 @@ kubectl get pods                   -- 查看刚刚创建的pod是否成功
           app: nginx
       spec:                        #说明
         containers:                #容器
-          - name: nginx            #容器名称
-            image: nginx:1.7.9     #镜像
-            ports:
-              - containerPort: 80  #容器端口
+        - name: nginx              #容器名称
+          image: nginx:1.7.9       #镜像
+          ports:
+          - containerPort: 80      #容器端口
                  
-kubectl create -f 'yaml文件名称'    -- 使用配置文件创建 '部署'
-kubectl get deployments             -- 查看刚刚创建的 '部署' 是否成功
-kubectl get pods -l app=nginx       -- 获取 '部署' 里 labels 里面 app=nginx的pod  <service是根据labels 里面 app相同名称，来做负载均衡>
+kubectl create -f 'yaml文件名称'    #使用配置文件创建 '部署'
+kubectl get deployments            #查看刚刚创建的 '部署' 是否成功
+kubectl get pods -l app=nginx      #获取 '部署' 里 labels 里面 app=nginx的pod  <service是根据labels 里面 app相同名称，来做负载均衡>
 ```    
 
 ## 9. 为集群增加service功能 - kube-proxy（工作节点）
