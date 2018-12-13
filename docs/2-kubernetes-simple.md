@@ -421,7 +421,7 @@ spec:
     nodePort: 20000     #node节点绑定的端口，就是机器对外提供服务的端口
   selector:
     app: nginx          #选择给谁提供服务，这里选的是 deployments（部署） 里 labels 下 app=nginx 的部署。（可以看上面我们创建了一个 deployments（部署）里面有 app:nginx）
-  type: NodePort
+  type: NodePort        #端口类型，NodePort：外网可以访问；ClusterIP：集群内访问
   
   
 kubectl create -f nginx-services.yaml   -- 创建 service
