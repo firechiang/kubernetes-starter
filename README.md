@@ -219,6 +219,7 @@ docker 默认支持互通，可通过 -icc=false 关闭互通。《/usr/bin/dock
 ## [二、基础集群部署 - kubernetes-simple][2]
 ## [三、完整集群部署 - kubernetes-with-ca][3]
 ## [四、在kubernetes上部署我们的微服务][4]
+## [五、GitLab安装][5]
 
 
 
@@ -232,3 +233,4 @@ docker 默认支持互通，可通过 -icc=false 关闭互通。《/usr/bin/dock
   [2]: https://github.com/firechiang/kubernetes-starter/blob/master/docs/2-kubernetes-simple.md
   [3]: https://github.com/firechiang/kubernetes-starter/blob/master/docs/3-kubernetes-with-ca.md
   [4]: https://github.com/firechiang/kubernetes-starter/blob/master/docs/4-microservice-deploy.md
+  [5]: https://github.com/firechiang/kubernetes-starter/blob/master/docs/5-gitlab-install.md
