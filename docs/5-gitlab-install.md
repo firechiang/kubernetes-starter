@@ -97,6 +97,3 @@ $ git push origin master
 
 去gitlab上看看  
 <img src="../images/file.png" width="50%" height="50%"/>
-
-到这我们的gitlab就齐活啦！愉快的使用吧~
-
