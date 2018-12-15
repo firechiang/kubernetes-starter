@@ -7,7 +7,10 @@ wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
 java -jar jenkins.war --httpPort=9999   
 #访问测试  ，首次访问要填写我们上一步记录的 uuid
 http://localhost:9999   
-<img src="../images/jenkins-001.PNG" width="60%" height="60%" />
-<img src="../images/jenkins-002.PNG" width="60%" height="60%" /> 
-<img src="../images/jenkins-003.PNG" width="60%" height="60%" />                 
 ```
+#### 填写uuid
+<img src="../images/jenkins-001.PNG" width="60%" height="60%" />
+#### 选择安装方式
+<img src="../images/jenkins-002.PNG" width="60%" height="60%" /> 
+#### 选择插件
+<img src="../images/jenkins-003.PNG" width="60%" height="60%" />
