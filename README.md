@@ -1,6 +1,7 @@
 ## Docker基础
 ### 1，安装Docker
 ```bash
+#官方安装文档：https://docs.docker.com/install/linux/docker-ce/centos/
 yum -y update                                         --更新 yum 源到最新
 
 cat >/etc/yum.repos.d/docker.repo <<-EOF              --添加 yum 源 如下
