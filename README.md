@@ -72,6 +72,8 @@ docker ps                                             --查看 dicker 当前正�
 
 docker logs -f '容器ID'                               --查看 服务容器运行日志 <就是用docker ps命令显示出来的那个容器ID>
 
+docker cp 846db7:/etc/nginx/template/nginx.tmpl ./    --将容器里面的文件/etc/nginx/template/nginx.tmpl文件，复制到当前目录（846db7=容器运行ID）
+
 docker commit 'id' 镜像名称                           --将容器创建为镜像 'id'=容器ID《docker ps -a 查看到的id》，《所有镜像可使用 docker images 命令查看》
 
 /usr/lib/systemd/system/docker.service                --docker 配置文件地址
